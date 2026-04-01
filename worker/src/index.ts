@@ -47,8 +47,14 @@ export default {
       )
     }
 
-    // Serve static assets for everything else
-    return env.ASSETS.fetch(request)
+    // Serve static assets, with SPA fallback for client-side routes
+    const assetResponse = await env.ASSETS.fetch(request)
+    if (assetResponse.status === 404) {
+      // SPA fallback: serve index.html for client-side routes like /demo
+      const indexRequest = new Request(new URL('/', request.url).toString(), request)
+      return env.ASSETS.fetch(indexRequest)
+    }
+    return assetResponse
   },
 } satisfies ExportedHandler<Env>
 
