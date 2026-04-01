@@ -1,0 +1,5 @@
+node_modules
+dist
+.wrangler
+*.local.md
+.DS_Store
