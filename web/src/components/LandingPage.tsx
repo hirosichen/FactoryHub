@@ -18,33 +18,33 @@ const PAINS = [
   {
     emoji: '📊',
     title: '數據散落各系統',
-    desc: 'MES、SCADA、ERP、LIMS 各自為政。要看全廠狀態得登入五個系統，每次交班報告都是一場惡夢。',
+    desc: 'MES、SCADA、ERP 各自為政。要看全廠狀態得登入五個系統，每次交班報告都是一場惡夢。',
     img: '/assets/control-room.jpg',
   },
   {
     emoji: '🔧',
     title: '設備故障才知道壞了',
-    desc: '沒有預警機制，設備異常只能靠師傅經驗判斷。一次非計畫停機就是數十萬的產能損失。',
+    desc: '沒有預警機制，設備異常只能靠老師傅經驗判斷。一次非計畫停機就是數十萬的產能損失。',
     img: '/assets/maintenance-hero.jpg',
   },
   {
-    emoji: '🧊',
-    title: '冷鏈斷鏈風險高',
-    desc: '溫控紀錄靠人工抄寫，感測器告警常被忽略。一次冷鏈斷鏈就可能整批貨品報廢。',
+    emoji: '📋',
+    title: '品質靠人工巡檢',
+    desc: '品質數據手抄記錄、人眼判斷良品。批次品質問題常在出貨後才被發現，造成退貨與客訴。',
     img: '/assets/cold-chain.jpg',
   },
 ]
 
 const SOLUTIONS = [
-  { icon: '🏭', title: '產線即時監控', desc: '串接 MES/SCADA，產量、OEE、稼動率一目了然。AI 自動識別瓶頸。' },
-  { icon: '🔬', title: 'AI 品質檢測', desc: 'AI 影像辨識不良品，SPC 管制圖自動生成。品質異常秒級告警。' },
-  { icon: '🧊', title: '冷鏈智能溫控', desc: 'IoT 感測器即時監控，AI 預測溫控異常，自動調整除霜排程。' },
+  { icon: '🏭', title: '產線即時監控', desc: '串接 MES/SCADA，產量、OEE、稼動率一目了然。AI 自動識別產線瓶頸與異常。' },
+  { icon: '🔬', title: 'AI 品質檢測', desc: 'AI 影像辨識不良品，SPC 管制圖自動生成。品質異常秒級告警，源頭攔截。' },
   { icon: '🤖', title: 'AI 預測性維護', desc: '振動頻譜分析預測設備壽命，排定最佳維護時機，避免非計畫停機。' },
+  { icon: '⚡', title: '能源 & 環境管理', desc: '即時監控用電、用水、碳排放。AI 優化能耗模式，自動排程離峰生產。' },
 ]
 
 const STEPS = [
   { num: '01', title: '連接設備', desc: '支援 OPC-UA、MQTT、Modbus 等 10+ 工業協議，AI 自動偵測設備並映射數據。' },
-  { num: '02', title: '選擇模組', desc: '從應用市集挑選需要的 AI 模組。產線監控、品質管理、冷鏈追蹤 — 一鍵安裝。' },
+  { num: '02', title: '選擇模組', desc: '從應用市集挑選需要的 AI 模組。產線監控、品質管理、設備維護 — 一鍵安裝。' },
   { num: '03', title: '開始營運', desc: '即時儀表板上線，AI 持續學習優化。設備異常、品質偏差自動告警通知。' },
 ]
 
@@ -56,10 +56,10 @@ const FEATURES = [
     img: '/assets/quality-lab.jpg',
   },
   {
-    title: '冷鏈管理 — 全程溫控零死角',
-    desc: 'IoT 感測器即時監控倉儲溫濕度，AI 預測溫控異常趨勢。從原料入庫到成品出貨，冷鏈全程可追溯，食安合規自動化。',
-    list: ['IoT 溫濕度即時監控', 'AI 預測溫控異常', '冷鏈全程可追溯', '自動除霜排程優化'],
-    img: '/assets/cold-chain.jpg',
+    title: '預測性維護 — 設備故障提前預警',
+    desc: 'AI 分析設備振動頻譜、溫度、電流等感測數據，預測軸承壽命與故障時間。讓維護從「壞了才修」變成「預知保養」，大幅降低非計畫停機。',
+    list: ['振動頻譜 AI 分析', '設備健康度即時評分', '最佳維護時機排程', '備品需求自動預測'],
+    img: '/assets/maintenance-hero.jpg',
     reverse: true,
   },
 ]
@@ -67,26 +67,26 @@ const FEATURES = [
 const PRICING = [
   {
     name: '基礎版',
-    desc: '適合中小型食品工廠',
+    desc: '適合中小型製造工廠',
     price: '29,000',
     per: '/月',
     btn: '開始使用',
     btnStyle: 'outline' as const,
-    features: ['產線監控（3 條線）', '品質管理基礎模組', '冷鏈溫控監控', 'IoT 設備連接（50 點）', 'Email 告警通知'],
+    features: ['產線監控（3 條線）', '品質管理基礎模組', 'IoT 設備連接（50 點）', '即時儀表板', 'Email 告警通知'],
   },
   {
     name: '專業版',
-    desc: '適合多產線食品工廠',
+    desc: '適合多產線製造企業',
     price: '79,000',
     per: '/月',
     btn: '立即訂閱',
     btnStyle: 'accent' as const,
     popular: true,
-    features: ['基礎版所有功能', '產線監控（無上限）', 'AI 預測性維護', '設備維護排程', 'APP & LINE 告警', '應用市集全模組'],
+    features: ['基礎版所有功能', '產線監控（無上限）', 'AI 預測性維護', '能源管理模組', 'APP & LINE 告警', '應用市集全模組'],
   },
   {
     name: '企業版',
-    desc: '適合集團化食品企業',
+    desc: '適合集團化製造企業',
     price: '聯繫我們',
     per: '',
     btn: '預約諮詢',
@@ -260,7 +260,7 @@ export function LandingPage() {
         {/* Announce */}
         <div className="lp-announce" id="lp-announce">
           <span className="lp-pulse" />
-          FactoryHub AI 智慧工廠平台 — 讓工廠數據為你工作
+          FactoryHub — AI 驅動的智慧工廠平台，加速製造業數位轉型
           <a href="#pricing" style={{ color: '#fdba74', textDecoration: 'none', fontWeight: 600 }}> 查看方案 &rarr;</a>
         </div>
 
@@ -288,13 +288,13 @@ export function LandingPage() {
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             AI 智慧工廠管理平台
           </div>
-          <h1>產線、品質、冷鏈<br/>一個平台<span className="hl">全搞定</span></h1>
-          <p>整合產線監控、AI 品質檢測、冷鏈管理、預測性維護。串接 OPC-UA、MQTT 等工業協議，AI 即時分析全廠數據。</p>
+          <h1>產線、品質、設備<br/>一個平台<span className="hl">全搞定</span></h1>
+          <p>整合產線監控、AI 品質檢測、預測性維護、能源管理。串接 OPC-UA、MQTT 等工業協議，AI 即時分析全廠數據，讓工廠真正智慧化。</p>
           <div className="lp-hero-btns">
             <a href="#pricing" className="lp-btn lp-btn-accent">查看方案 &rarr;</a>
             <button className="lp-btn lp-btn-dark" onClick={() => navigate('/demo')}>體驗 Demo</button>
           </div>
-          <p className="lp-hero-sub">基礎版 NT$29,000/月起 &middot; 免費 Demo 體驗 &middot; 30 天滿意保證</p>
+          <p className="lp-hero-sub">適用各類製造業 &middot; 免費 Demo 體驗 &middot; 30 天滿意保證</p>
           <div className="lp-hero-img lp-fade-up">
             <img src="/assets/hero-factory.jpg" alt="FactoryHub AI 智慧工廠平台" loading="eager" />
           </div>
@@ -314,8 +314,8 @@ export function LandingPage() {
         <section className="lp-section" id="pain">
           <div className="lp-container">
             <div className="lp-tag">為什麼需要</div>
-            <div className="lp-title">這些場景，食品工廠天天遇到</div>
-            <p className="lp-desc">數據散落各系統、設備故障才發現、冷鏈斷鏈風險 — 你的工廠是否也深受其擾？</p>
+            <div className="lp-title">這些場景，製造業天天遇到</div>
+            <p className="lp-desc">數據散落各系統、設備故障才發現、品質靠人工判斷 — 你的工廠是否也深受其擾？</p>
             <div className="lp-pain-grid">
               {PAINS.map((p, i) => (
                 <div key={p.title} className={`lp-pain-card lp-fade-up ${i === 1 ? 'lp-delay-1' : i === 2 ? 'lp-delay-2' : ''}`}>
@@ -334,8 +334,8 @@ export function LandingPage() {
         <section className="lp-section lp-solution" id="solution">
           <div className="lp-container">
             <div className="lp-tag">解決方案</div>
-            <div className="lp-title" style={{ color: '#fff' }}>一個平台，管理全廠數據</div>
-            <p className="lp-desc">從產線監控到品質檢測，從冷鏈追蹤到設備維護 — 全部在同一個平台。</p>
+            <div className="lp-title" style={{ color: '#fff' }}>一個平台，驅動工廠智慧化</div>
+            <p className="lp-desc">從產線監控到品質檢測，從設備維護到能源管理 — 全部在同一個 AI 平台。</p>
             <div className="lp-sol-grid">
               <div className="lp-sol-img lp-fade-up">
                 <img src="/assets/production-line.jpg" alt="FactoryHub 解決方案" loading="lazy" style={{ borderRadius: 14 }} />
@@ -374,7 +374,7 @@ export function LandingPage() {
         <section className="lp-section" id="features">
           <div className="lp-container">
             <div className="lp-tag">核心功能</div>
-            <div className="lp-title">為食品工廠量身打造</div>
+            <div className="lp-title">為製造業量身打造的 AI 模組</div>
             {FEATURES.map((f, i) => (
               <div key={f.title} className={`lp-feat-row lp-fade-up ${f.reverse ? 'reverse' : ''}`} style={i > 0 ? { marginTop: 80 } : undefined}>
                 <div className="lp-feat-img"><img src={f.img} alt={f.title} loading="lazy" /></div>
@@ -395,7 +395,7 @@ export function LandingPage() {
           <div className="lp-container">
             <div className="lp-tag" style={{ textAlign: 'center' }}>方案價格</div>
             <div className="lp-title" style={{ textAlign: 'center' }}>簡單透明，按需選擇</div>
-            <p className="lp-desc" style={{ textAlign: 'center', margin: '0 auto' }}>從中小型工廠到集團企業，找到最適合的方案。</p>
+            <p className="lp-desc" style={{ textAlign: 'center', margin: '0 auto' }}>從中小型工廠到集團製造企業，找到最適合的方案。</p>
             <div className="lp-pricing-grid">
               {PRICING.map((p, i) => (
                 <div key={p.name} className={`lp-price-card lp-fade-up ${p.popular ? 'pop' : ''} ${i === 1 ? 'lp-delay-1' : i === 2 ? 'lp-delay-2' : ''}`}>
@@ -423,7 +423,7 @@ export function LandingPage() {
         {/* CTA */}
         <section className="lp-cta">
           <h2>讓你的工廠更聰明、更高效</h2>
-          <p>基礎版 NT$29,000/月起，免費 Demo 體驗全功能。</p>
+          <p>免費 Demo 體驗全功能，感受 AI 驅動的智慧製造。</p>
           <button className="lp-btn" onClick={() => navigate('/demo')}>體驗 Demo &rarr;</button>
         </section>
 
